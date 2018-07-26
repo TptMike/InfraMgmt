@@ -7,6 +7,6 @@ namespace InfraMgmt.Data
 {
     public class Config
     {
-        public static string Connection = "server=localhost;database=inventory;user=root;password=Ljtmacl1$$$";
+        public static string Connection = "";
     }
 }
