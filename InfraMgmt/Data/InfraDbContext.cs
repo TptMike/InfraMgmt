@@ -10,6 +10,11 @@ namespace InfraMgmt.Data
     public class InfraDbContext : DbContext
     {
         public DbSet<Asset> Assets { get; set; }
+        public InfraDbContext(DbContextOptions<InfraDbContext> options)
+        : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(Config.Connection);
