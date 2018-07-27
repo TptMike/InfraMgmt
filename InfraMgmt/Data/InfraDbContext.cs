@@ -12,7 +12,7 @@ namespace InfraMgmt.Data
         public DbSet<Asset> Assets { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(Config.Connection);
+            optionsBuilder.UseMySql(Config.Connection);
         }
     }
 }
