@@ -9,9 +9,10 @@ namespace InfraMgmt.Data
 {
     public class InfraDbContext : DbContext
     {
+        public DbSet<Asset> Assets { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL()
+            optionsBuilder.UseMySQL(Config.Connection);
         }
     }
 }
