@@ -14,5 +14,11 @@ namespace InfraMgmt.Models
         {
             _ctx = ctx;
         }
+        public List<Asset> GetAll()
+        {
+            List<Asset> assets = new List<Asset>();
+            assets = _ctx.Assets.Select(a => a).ToList();
+            return assets;
+        }
     }
 }

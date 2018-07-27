@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using InfraMgmt.Data;
+using InfraMgmt.Models;
+using InfraMgmt.Models.ViewModels;
 
 namespace InfraMgmt.Controllers
 {
@@ -16,7 +18,10 @@ namespace InfraMgmt.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            AssetModel am = new AssetModel(_ctx);
+            AssetIndexViewModel vm = new AssetIndexViewModel();
+            vm.Assets = am.GetAll();
+            return View(vm);
         }
         [HttpGet]
         [Route("api/assets/all")]

@@ -1,0 +1,43 @@
+﻿@model AssetIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h2>Index</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Asset Tag</th>
+            <th>Serial</th>
+            <th>Name</th>
+            <th>Model</th>
+            <th>Manufacturer</th>
+            <th>Status</th>
+            <th>Location</th>
+            <th>Category</th>
+            <th>Checked Out</th>
+            <th>Checked In</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData.Model.Assets)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.AssetId</td>
+            <td>@item.Serial</td>
+            <td>@item.Name</td>
+            <td>@item.Model</td>
+            <td>@item.Manufacturer</td>
+            <td>@item.Status</td>
+            <td>@item.Location</td>
+            <td>@item.Category</td>
+            <td>@item.CheckoutDate</td>
+            <td>@item.CheckinDate</td>
+        </tr>
+        }
+    </tbody>
+</table>
